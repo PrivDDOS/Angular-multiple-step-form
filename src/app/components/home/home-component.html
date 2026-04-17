@@ -1,33 +1,38 @@
-<div id="form-container">
+<div 
+id="form-container" 
+class="w-full h-screen flex justify-center items-center">
 
-    <div class="form-step">
+    <div 
+    class="form-step w-1/5 h-4/5 bg-no-repeat bg-cover bg-center
+    rounded-xl text-white"
+    >
 
-        <div class="step">
-            <div class="step-num">1</div>
+        <div class="step items-center w-full flex pt-8 pl-6">
+            <div class="step-num w-[15%] h-7 flex justify-center mr-5 border rounded-3xl">1</div>
             <div class="step-text">
                 <p>Step 1</p>
                 <p>Your Info</p>
             </div>
         </div>
 
-        <div class="step">
-            <div class="step-num">2</div>
+        <div class="step items-center w-full flex pt-8 pl-6">
+            <div class="step-num w-[15%] h-7 flex justify-center mr-5 border rounded-2xl">2</div>
             <div class="step-text">
                 <p>Step 2</p>
                 <p>Select Plan</p>
             </div>
         </div>
 
-        <div class="step">
-            <div class="step-num">3</div>
+        <div class="step items-center w-full flex pt-8 pl-6">
+            <div class="step-num w-[15%] h-7 flex justify-center mr-5 border rounded-2xl">3</div>
             <div class="step-text">
                 <p>Step 3</p>
                 <p>Add-Ons</p>
             </div>
         </div>
 
-        <div class="step">
-            <div class="step-num">4</div>
+        <div class="step items-center w-full flex pt-8 pl-6">
+            <div class="step-num w-[15%] h-7 flex justify-center mr-5 border rounded-2xl">4</div>
             <div class="step-text">
                 <p>Step 4</p>
                 <p>Summary</p>
@@ -86,7 +91,6 @@
                 <div class="btn">
                     <button 
                         type="submit"
-                        [disabled]="userForm.invalid"
                         (click)="nextStep()"
                         >
                         Next Step
@@ -99,49 +103,14 @@
 
             <div *ngIf="formStep === 2">
 
-                <h1>Personal info</h1>
+                <h1>Select plan</h1>
                 <p>Please provide your name, email address and phone number.</p>
                 
-                <div>
-                    <label for="name">Name</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        placeholder="e.g. Evan Fong"
-                        [(ngModel)]="userInfo.name" 
-                        required
-                        >
-                </div>
-    
-                <div>
-                    <label for="email">Email Address</label>
-                    <input 
-                        type="email"
-                        id="email" 
-                        name="email" 
-                        placeholder="e.g. evanfong@can.com"
-                        [(ngModel)]="userInfo.email" 
-                        required
-                        >
-                </div>
-    
-                <div>
-                    <label for="phoneNumber">Phone Number</label>
-                    <input 
-                        type="tel"
-                        id="phoneNumber" 
-                        name="phoneNumber" 
-                        placeholder="e.g. evanfong@can.com"
-                        [(ngModel)]="userInfo.phoneNumber"
-                        required
-                        >
-                </div>
+                
     
                 <div class="btn">
                     <button 
                         type="submit"
-                        [disabled]="userForm.invalid"
                         (click)="nextStep()"
                         >
                         Next Step
@@ -152,51 +121,16 @@
 
             <!-- Step 3 -->
 
-            <div *ngIf="formStep === 2">
+            <div *ngIf="formStep === 3">
 
-                <h1>Personal info</h1>
+                <h1>Add-Ons</h1>
                 <p>Please provide your name, email address and phone number.</p>
                 
-                <div>
-                    <label for="name">Name</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        placeholder="e.g. Evan Fong"
-                        [(ngModel)]="userInfo.name" 
-                        required
-                        >
-                </div>
-    
-                <div>
-                    <label for="email">Email Address</label>
-                    <input 
-                        type="email"
-                        id="email" 
-                        name="email" 
-                        placeholder="e.g. evanfong@can.com"
-                        [(ngModel)]="userInfo.email" 
-                        required
-                        >
-                </div>
-    
-                <div>
-                    <label for="phoneNumber">Phone Number</label>
-                    <input 
-                        type="tel"
-                        id="phoneNumber" 
-                        name="phoneNumber" 
-                        placeholder="e.g. evanfong@can.com"
-                        [(ngModel)]="userInfo.phoneNumber"
-                        required
-                        >
-                </div>
+                
     
                 <div class="btn">
                     <button 
                         type="submit"
-                        [disabled]="userForm.invalid"
                         (click)="nextStep()"
                         >
                         Next Step
@@ -207,46 +141,12 @@
 
             <!-- Step 4 -->
 
-            <div *ngIf="formStep === 2">
+            <div *ngIf="formStep === 4">
 
-                <h1>Personal info</h1>
+                <h1>Summary</h1>
                 <p>Please provide your name, email address and phone number.</p>
                 
-                <div>
-                    <label for="name">Name</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        placeholder="e.g. Evan Fong"
-                        [(ngModel)]="userInfo.name" 
-                        required
-                        >
-                </div>
-    
-                <div>
-                    <label for="email">Email Address</label>
-                    <input 
-                        type="email"
-                        id="email" 
-                        name="email" 
-                        placeholder="e.g. evanfong@can.com"
-                        [(ngModel)]="userInfo.email" 
-                        required
-                        >
-                </div>
-    
-                <div>
-                    <label for="phoneNumber">Phone Number</label>
-                    <input 
-                        type="tel"
-                        id="phoneNumber" 
-                        name="phoneNumber" 
-                        placeholder="e.g. evanfong@can.com"
-                        [(ngModel)]="userInfo.phoneNumber"
-                        required
-                        >
-                </div>
+                
     
                 <div class="btn">
                     <button 

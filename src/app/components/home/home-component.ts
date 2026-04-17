@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home-component.css',
 })
 export class HomeComponent {
+
   formStep = 1
 
   userInfo = new UserInfo('', '', '')
