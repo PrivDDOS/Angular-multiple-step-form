@@ -43,19 +43,24 @@ class="w-full h-screen flex justify-center items-center">
 
     <div class="form-field w-2/5 h-4/5 text-(--color-blue-950)">
         
-        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <form 
+        #userForm="ngForm" 
+        (ngSubmit)="onSubmit(userForm)" 
+        class="flex justify-center h-full"
+        >
         
             <!-- Step 1 -->
 
             <div *ngIf="formStep === 1">
 
-                <h1>Personal info</h1>
-                <p>Please provide your name, email address and phone number.</p>
+                <h1 class="font-semibold text-3xl pt-8">Personal info</h1>
+                <p class="font-thin pt-2">Please provide your name, email address and phone number.</p>
                 
-                <div>
-                    <label for="name">Name</label>
+                <div class="flex flex-col pt-10">
+                    <label for="name" class="pb-2">Name</label>
                     <input 
                         type="text" 
+                        class="p-[15px]"
                         id="name" 
                         name="name" 
                         placeholder="e.g. Evan Fong"
@@ -64,34 +69,37 @@ class="w-full h-screen flex justify-center items-center">
                         >
                 </div>
     
-                <div>
-                    <label for="email">Email Address</label>
+                <div class="flex flex-col pt-4">
+                    <label for="email" class="pb-2">Email Address</label>
                     <input 
                         type="email"
+                        class="p-[15px]"
                         id="email" 
                         name="email" 
                         placeholder="e.g. evanfong@can.com"
                         [(ngModel)]="userInfo.email" 
-                        required
+                        required email
                         >
                 </div>
     
-                <div>
-                    <label for="phoneNumber">Phone Number</label>
+                <div class="flex flex-col pt-4">
+                    <label for="phoneNumber" class="pb-2">Phone Number</label>
                     <input 
                         type="tel"
+                        class="p-[15px]"
                         id="phoneNumber" 
                         name="phoneNumber" 
-                        placeholder="e.g. evanfong@can.com"
+                        placeholder="e.g. +1 234 567 8900"
                         [(ngModel)]="userInfo.phoneNumber"
                         required
                         >
                 </div>
     
-                <div class="btn">
+                <div class="flex justify-center float-right w-[100px] h-[40px] bg-(--color-blue-950) text-white mt-[60px] mr-[20px] rounded-xl cursor-pointer">
                     <button 
                         type="submit"
-                        (click)="nextStep()"
+                        class="cursor-pointer"
+                        (click)="nextStep(userForm)"
                         >
                         Next Step
                     </button>
@@ -111,7 +119,7 @@ class="w-full h-screen flex justify-center items-center">
                 <div class="btn">
                     <button 
                         type="submit"
-                        (click)="nextStep()"
+                        (click)="nextStep(userForm)"
                         >
                         Next Step
                     </button>
@@ -131,7 +139,7 @@ class="w-full h-screen flex justify-center items-center">
                 <div class="btn">
                     <button 
                         type="submit"
-                        (click)="nextStep()"
+                        (click)="nextStep(userForm)"
                         >
                         Next Step
                     </button>

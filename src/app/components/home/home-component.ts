@@ -21,8 +21,10 @@ export class HomeComponent {
     console.log('Your Data', this.userInfo)
   }
 
-  nextStep() { 
-    this.formStep++; 
+  nextStep(form: NgForm) { 
+    if (form.valid) {
+      this.formStep++; 
+    }
   }
 
 }
