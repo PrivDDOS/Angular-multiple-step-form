@@ -8,7 +8,16 @@ class="w-full h-screen flex justify-center items-center">
     >
 
         <div class="step items-center w-full flex pt-8 pl-6">
-            <div class="step-num w-[10%] h-7 flex justify-center mr-5 border rounded-3xl">1</div>
+            <div 
+            class="step-num w-[10%] h-7 flex justify-center
+             mr-5 border-1 border-(--color-blue-200) 
+             rounded-2xl"
+             [class]="formStep === 1 ? 
+             'bg-(--color-blue-200) text-(--color-purple-600)' : 
+             'bg-transparent text-(--color-blue-200)' "
+             >
+             1
+            </div>
             <div class="step-text">
                 <p class="uppercase font-thin">Step 1</p>
                 <p class="uppercase font-semibold">Your Info</p>
@@ -16,7 +25,16 @@ class="w-full h-screen flex justify-center items-center">
         </div>
 
         <div class="step items-center w-full flex pt-8 pl-6">
-            <div class="step-num w-[10%] h-7 flex justify-center mr-5 border rounded-2xl">2</div>
+            <div 
+            class="step-num w-[10%] h-7 flex justify-center
+             mr-5 border-1 border-(--color-blue-200)
+             rounded-2xl"
+             [class]="formStep === 2 ? 
+             'bg-(--color-blue-200) text-(--color-purple-600)' : 
+             'bg-transparent text-(--color-blue-200)' "
+             >
+             2
+            </div>
             <div class="step-text">
                 <p class="uppercase font-thin">Step 2</p>
                 <p class="uppercase font-semibold">Select Plan</p>
@@ -24,7 +42,16 @@ class="w-full h-screen flex justify-center items-center">
         </div>
 
         <div class="step items-center w-full flex pt-8 pl-6">
-            <div class="step-num w-[10%] h-7 flex justify-center mr-5 border rounded-2xl">3</div>
+            <div 
+            class="step-num w-[10%] h-7 flex justify-center
+             mr-5 border-1 border-(--color-blue-200) 
+             rounded-2xl"
+             [class]="formStep === 3 ? 
+             'bg-(--color-blue-200) text-(--color-purple-600)' : 
+             'bg-transparent text-(--color-blue-200)' "
+             >
+             3
+            </div>
             <div class="step-text">
                 <p class="uppercase font-thin">Step 3</p>
                 <p class="uppercase font-semibold">Add-Ons</p>
@@ -32,7 +59,16 @@ class="w-full h-screen flex justify-center items-center">
         </div>
 
         <div class="step items-center w-full flex pt-8 pl-6">
-            <div class="step-num w-[10%] h-7 flex justify-center mr-5 border rounded-2xl">4</div>
+            <div 
+            class="step-num w-[10%] h-7 flex justify-center
+             mr-5 border-1 border-(--color-blue-200)
+             rounded-2xl"
+             [class]="formStep === 4 ? 
+             'bg-(--color-blue-200) text-(--color-purple-600)' : 
+             'bg-transparent text-(--color-blue-200)' "
+             >
+             4
+            </div>
             <div class="step-text">
                 <p class="uppercase font-thin">Step 4</p>
                 <p class="uppercase font-semibold">Summary</p>
@@ -78,7 +114,7 @@ class="w-full h-screen flex justify-center items-center">
                         name="email" 
                         placeholder="e.g. evanfong@can.com"
                         [(ngModel)]="userInfo.email" 
-                        required email
+                        required
                         >
                 </div>
     
@@ -111,10 +147,36 @@ class="w-full h-screen flex justify-center items-center">
 
             <div *ngIf="formStep === 2">
 
-                <h1>Select plan</h1>
-                <p>Please provide your name, email address and phone number.</p>
+                <h1>Select your plan</h1>
+                <p>You have the option of monthly or yeary billing.</p>
                 
-                
+                <div class="plan">
+                    
+                    <div class="plan-box">
+                        <div class="img">
+                            <img src="/assets/images/icon-arcade.svg" alt="arcade">
+                        </div>
+                        <h1>Arcade</h1>
+                        <h2>$9/mo</h2>
+                    </div>
+
+                    <div class="plan-box">
+                        <div class="img">
+                            <img src="/assets/images/icon-advanced.svg" alt="arcade">
+                        </div>
+                        <h1>Advanced</h1>
+                        <h2>$12/mo</h2>
+                    </div>
+
+                    <div class="plan-box">
+                        <div class="img">
+                            <img src="/assets/images/icon-pro.svg" alt="arcade">
+                        </div>
+                        <h1>Pro</h1>
+                        <h2>$15/mo</h2>
+                    </div>
+
+                </div>
     
                 <div class="btn">
                     <button 
@@ -174,3 +236,56 @@ class="w-full h-screen flex justify-center items-center">
 
 
 </div>
+
+
+<!-- 
+    In Angular, you can manage CSS classes and styles dynamically using either the native property bindings ([class] and [style]) or the built-in directives ([ngClass] and [ngStyle]). 
+    Modern Angular documentation recommends using native property bindings over directives whenever possible for better performance and readability. 
+    Angular
+    Angular
+    +2
+    1. Class Binding
+    Use these to add or remove CSS classes based on component data. 
+    Single Class Toggle: The most common use for toggling a single class.
+    html
+    / Adds 'active' class if isSelected is true \
+    <div [class.active]="isSelected"></div> 
+    Multiple Classes: You can bind to a string, array, or object.
+    html
+    / Using a string \
+    <div [class]="'class1 class2'"></div>
+
+    / Using an object (similar to ngClass) \
+    <div [class]="{'featured': isFeatured, 'promo': isOnSale}"></div>
+    [NgClass] Directive: Specifically designed for complex scenarios where you need to manage many classes via a single expression.
+    html
+    <div [ngClass]="['class1', 'class2']"></div>
+    
+    Angular
+    Angular
+    +4
+    2. Style Binding
+    Use these to set inline styles dynamically. 
+    Single Style Property: You can bind directly to a CSS property.
+    html
+    / Standard binding \
+    <div [style.color]="isError ? 'red' : 'blue'"></div>
+
+    / Binding with units \
+    <div [style.font-size.px]="fontSize"></div>
+    Multiple Styles: You can bind a full object of styles to the [style] attribute.
+    html
+    <div [style]="{'color': 'red', 'font-weight': 'bold'}"></div>
+    
+    Pluralsight
+    Pluralsight
+    +4
+    Comparison & Best Practices
+    Feature 	Native Binding ([class], [style])	Directive ([ngClass], [ngStyle])
+    Performance	Faster (optimized by Angular compiler)	Slightly more overhead
+    Complexity	Best for single or few properties	Best for large, dynamic objects
+    Status	Recommended for modern apps	Supported but often replaceable
+    Migration Note: If you are upgrading an older project, Angular provides a migration schematic (ng generate @angular/core:ngclass-to-class) to automatically convert [ngClass] to native [class] bindings. 
+    Angular
+    Angular
+-->

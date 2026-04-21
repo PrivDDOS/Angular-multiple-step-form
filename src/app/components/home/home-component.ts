@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
 
-  formStep = 1
+  formStep = 1;
 
   userInfo = new UserInfo('', '', '')
 
