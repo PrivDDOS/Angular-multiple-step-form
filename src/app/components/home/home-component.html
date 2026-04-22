@@ -87,7 +87,7 @@ class="w-full h-screen flex justify-center items-center">
         
             <!-- Step 1 -->
 
-            <div *ngIf="formStep === 1">
+            <div *ngIf="formStep === 2">
 
                 <h1 class="font-semibold text-3xl pt-8">Personal info</h1>
                 <p class="font-thin pt-2">Please provide your name, email address and phone number.</p>
@@ -145,40 +145,77 @@ class="w-full h-screen flex justify-center items-center">
 
             <!-- Step 2 -->
 
-            <div *ngIf="formStep === 2">
+            <div *ngIf="formStep === 1" class="w-[100%]">
 
-                <h1>Select your plan</h1>
-                <p>You have the option of monthly or yeary billing.</p>
+                <div class="pl-12">
+                    <h1>Select your plan</h1>
+                    <p>You have the option of monthly or yeary billing.</p>
+                </div>
                 
-                <div class="plan">
-                    
-                    <div class="plan-box">
-                        <div class="img">
-                            <img src="/assets/images/icon-arcade.svg" alt="arcade">
+                <div class="plan-container w-[80%]">
+
+                    <div class="plan flex justify-around align-center">
+                        
+                        <div class="plan-box">
+                            <div class="img">
+                                <img src="/assets/images/icon-arcade.svg" alt="arcade">
+                            </div>
+                            <h1>Arcade</h1>
+                            <h2>$9/mo</h2>
                         </div>
-                        <h1>Arcade</h1>
-                        <h2>$9/mo</h2>
+    
+                        <div class="plan-box">
+                            <div class="img">
+                                <img src="/assets/images/icon-advanced.svg" alt="arcade">
+                            </div>
+                            <h1>Advanced</h1>
+                            <h2>$12/mo</h2>
+                        </div>
+    
+                        <div class="plan-box">
+                            <div class="img">
+                                <img src="/assets/images/icon-pro.svg" alt="arcade">
+                            </div>
+                            <h1>Pro</h1>
+                            <h2>$15/mo</h2>
+                        </div>
+
                     </div>
 
-                    <div class="plan-box">
-                        <div class="img">
-                            <img src="/assets/images/icon-advanced.svg" alt="arcade">
-                        </div>
-                        <h1>Advanced</h1>
-                        <h2>$12/mo</h2>
-                    </div>
+                    <div class="plan-option">
+                        <h2 class="font-semibold">Monthly</h2>
 
-                    <div class="plan-box">
-                        <div class="img">
-                            <img src="/assets/images/icon-pro.svg" alt="arcade">
-                        </div>
-                        <h1>Pro</h1>
-                        <h2>$15/mo</h2>
+                        <label 
+                        class="switch relative inline-block w-[60px] h-[34px]">
+                            <input type="checkbox" class="opacity-0 w-0 h-0 peer">
+                            <span 
+                            class="slider absolute cursor-pointer 
+                            top-0 right-0 bottom-0 left-0 bg-[var(--color-blue-950)]
+                            transition-all duration-[400ms]
+                            before:absolute before:content-[''] before:w-[26px]
+                            before:h-[26px] before:left-[4px] before:bottom-[4px]
+                            before:bg-[var(--color-blue-200)] before:transition-all before:duration-[400ms]
+                            rounded-[34px] before:rounded-[50%]
+                            peer-checked:before:left-[30px]"
+                            >
+                            </span>
+                        </label>
+
+                        <h2>Yearly</h2>
                     </div>
 
                 </div>
+
+
+                
     
                 <div class="btn">
+                    <button
+                        type="button"
+                        >
+                        Go Back
+                    </button>
+
                     <button 
                         type="submit"
                         (click)="nextStep(userForm)"
