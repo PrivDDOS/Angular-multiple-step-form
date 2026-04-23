@@ -16,6 +16,8 @@ export class HomeComponent {
 
   userInfo = new UserInfo('', '', '')
 
+  selectedPlan: string = '';
+
   onSubmit(form: NgForm) {
 
     console.log('Your Data', this.userInfo)
@@ -24,6 +26,15 @@ export class HomeComponent {
   nextStep(form: NgForm) { 
     if (form.valid) {
       this.formStep++; 
+    }
+  }
+
+  selectPlan(plan: string) {
+    if (this.selectedPlan === plan) {
+      this.selectedPlan = '';
+    } else {
+      this.selectedPlan = plan;
+      console.log(this.selectedPlan)
     }
   }
 
