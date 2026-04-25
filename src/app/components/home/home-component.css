@@ -4,5 +4,5 @@
 }
 
 .plan-box {
-    transition: border 0.3s ease; /* Smooth transition */
+    transition: border 0.3s ease-in-out; /* Smooth transition */
 }

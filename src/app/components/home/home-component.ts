@@ -34,7 +34,6 @@ export class HomeComponent {
       this.selectedPlan = '';
     } else {
       this.selectedPlan = plan;
-      console.log(this.selectedPlan)
     }
   }
 
