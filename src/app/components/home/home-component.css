@@ -2,7 +2,3 @@
     background-image: url('/assets/images/bg-sidebar-desktop.svg');
     background-repeat: no-repeat;
 }
-
-.plan-box {
-    transition: border 0.3s ease-in-out; /* Smooth transition */
-}

@@ -17,6 +17,7 @@ export class HomeComponent {
   userInfo = new UserInfo('', '', '')
 
   selectedPlan: string = '';
+  planOptionSelect: boolean = false;
 
   onSubmit(form: NgForm) {
 
@@ -35,6 +36,10 @@ export class HomeComponent {
     } else {
       this.selectedPlan = plan;
     }
+  }
+
+  togglePlan() {
+    this.planOptionSelect = !this.planOptionSelect
   }
 
 }

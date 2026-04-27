@@ -199,33 +199,42 @@ class="w-full h-screen flex justify-center items-center">
 
                     </div>
 
-                    <div class="plan-option flex justify-center align-center">
-                        <h2 class="font-semibold">Monthly</h2>
+                </div>
 
-                        <label 
-                        class="switch relative inline-block w-[60px] h-[34px]">
-                            <input type="checkbox" class="opacity-0 w-0 h-0 peer">
-                            <span 
-                            class="slider absolute cursor-pointer 
-                            top-0 right-0 bottom-0 left-0 bg-[var(--color-blue-950)]
-                            transition-all duration-[400ms]
-                            before:absolute before:content-[''] before:w-[26px]
-                            before:h-[26px] before:left-[4px] before:bottom-[4px]
-                            before:bg-[var(--color-blue-200)] before:transition-all before:duration-[400ms]
-                            rounded-[34px] before:rounded-[50%]
-                            peer-checked:before:left-[30px]"
-                            >
-                            </span>
-                        </label>
+                <div class="plan-option flex justify-center align-center">
+                    <h2 
+                    class="pr-8"
+                    [ngClass]="planOptionSelect ? 'font-thin' : 'font-semibold'"
+                    >
+                    Monthly
+                    </h2>
 
-                        <h2>Yearly</h2>
-                    </div>
+                    <label 
+                    class="switch relative inline-block w-[60px] h-[34px]">
+                        <input type="checkbox" class="opacity-0 w-0 h-0 peer">
+                        <span 
+                        class="slider absolute cursor-pointer 
+                        top-0 right-0 bottom-0 left-0 bg-[var(--color-blue-950)]
+                        transition-all duration-[400ms]
+                        before:absolute before:content-[''] before:w-[26px]
+                        before:h-[26px] before:left-[4px] before:bottom-[4px]
+                        before:bg-[var(--color-blue-200)] before:transition-all before:duration-[400ms]
+                        rounded-[34px] before:rounded-[50%]
+                        peer-checked:before:left-[30px]"
+                        (click)="togglePlan()"
+                        >
+                        </span>
+                    </label>
 
+                    <h2 
+                    class="pl-8"
+                    [ngClass]="planOptionSelect ? 'font-bold' : 'font-thin'"
+                    >
+                    Yearly
+                    </h2>
                 </div>
 
 
-                
-    
                 <div class="btn">
                     <button
                         type="button"
