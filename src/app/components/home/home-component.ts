@@ -30,6 +30,10 @@ export class HomeComponent {
     }
   }
 
+  lastStep(form: NgForm) {
+    this.formStep--;
+  }
+
   selectPlan(plan: string) {
     if (this.selectedPlan === plan) {
       this.selectedPlan = '';
