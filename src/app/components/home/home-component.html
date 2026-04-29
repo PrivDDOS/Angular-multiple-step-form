@@ -268,59 +268,68 @@ class="w-full h-screen flex justify-center items-center">
 
             <div *ngIf="formStep === 1" class="w-[100%]">
 
-                <div class="">
+                <div class="pl-12">
                     <h1 class="font-semibold text-3xl pt-8">Pick add-ons</h1>
                     <p class="font-thin pt-2">Add-ons help enhance your gaming experience</p>
                 </div>
                 
-                <div class="plan-container w-[100%] flex align-center flex-col">
+                <div class="plan-container w-[100%] flex align-center flex-col pl-12">
 
                     <div class="plan flex flex-col">
                         <div 
-                        class="plan-box flex flex-row justify-around w-[80%] h-[60px] 
+                        class="plan-box flex flex-row items-center w-[80%] h-[60px] 
                         rounded-xl cursor-pointer hover:border-1 hover:border-[var(--color-purple-600)] 
                         mr-4 pl-4"
                         [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedPlan === 'arcade'}"
                         (click)="selectPlan('arcade')"
                         >
-                            <div class="img">
-                                <img src="/assets/images/icon-arcade.svg" alt="arcade">
+                            <div class="left">
+                                <input type="checkbox">
                             </div>
-                            <div>
-                                <h1>Arcade</h1>
-                                <h2>$9/mo</h2>
+                            <div class="mid">
+                                <h2>Online service</h2>
+                                <p>Access to miltiplayer games</p>
+                            </div>
+                            <div class="right">
+                                <h2>+$1/mo</h2>
                             </div>
                         </div>
     
                         <div 
-                        class="plan-box flex flex-row justify-around w-[80%] h-[60px] 
+                        class="plan-box flex flex-row items-center w-[80%] h-[60px] 
                         rounded-xl cursor-pointer hover:border-1 hover:border-[var(--color-purple-600)] 
                         mr-4 pl-4"
                         [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedPlan === 'advanced'}"
                         (click)="selectPlan('advanced')"
                         >
-                            <div class="img">
-                                <img src="/assets/images/icon-advanced.svg" alt="arcade">
+                            <div class="left">
+                                <input type="checkbox">
                             </div>
-                            <div>
-                                <h1>Advanced</h1>
-                                <h2>$12/mo</h2>
+                            <div class="mid">
+                                <h2>Larger storage</h2>
+                                <p>Extra 1TB of cloud save</p>
+                            </div>
+                            <div class="right">
+                                <h2>+$2/mo</h2>
                             </div>
                         </div>
     
                         <div 
-                        class="plan-box flex flex-row justify-around w-[80%] h-[60px] 
+                        class="plan-box flex flex-row items-center w-[80%] h-[60px] 
                         rounded-xl cursor-pointer hover:border-1 hover:border-[var(--color-purple-600)] 
                         mr-4 pl-4"
                         [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedPlan === 'pro'}"
                         (click)="selectPlan('pro')"
                         >
-                            <div class="img">
-                                <img src="/assets/images/icon-pro.svg" alt="arcade">
+                            <div class="left">
+                                <input type="checkbox">
                             </div>
-                            <div>
-                                <h1>Pro</h1>
-                                <h2>$15/mo</h2>
+                            <div class="mid">
+                                <h2>Customizable</h2>
+                                <p>Custom theme on your profile</p>
+                            </div>
+                            <div class="right">
+                                <h2>+$2/mo</h2>
                             </div>
                         </div>
 
@@ -328,9 +337,21 @@ class="w-full h-screen flex justify-center items-center">
 
                 </div>
     
-                <div class="btn">
+                <div class="btn w-[80%] flex justify-around pt-[120px]">
+                    <button
+                        type="button"
+                        class="cursor-pointer"
+                        (click)="lastStep(userForm)"
+                        >
+                        Go Back
+                    </button>
+
                     <button 
                         type="submit"
+                        class=
+                        "w-[100px] h-[40px] bg-(--color-blue-950) 
+                        text-white rounded-xl 
+                        cursor-pointer"
                         (click)="nextStep(userForm)"
                         >
                         Next Step
