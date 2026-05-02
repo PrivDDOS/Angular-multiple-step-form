@@ -281,8 +281,8 @@ class="w-full h-screen flex justify-center items-center">
                         w-[80%] h-[60px] pl-4 pr-4 rounded-xl cursor-pointer 
                         hover:border-1 hover:border-[var(--color-purple-600)] 
                         "
-                        [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedPlan === 'arcade'}"
-                        (click)="selectPlan('arcade')"
+                        [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedAddOns.includes('Online Service')}"
+                        (click)="selectAddOn('Online Service')"
                         >
                             <div class="flex flex-row items-center">
                                 <div class="relative flex items-center justify-center w-4 h-4">
@@ -325,14 +325,14 @@ class="w-full h-screen flex justify-center items-center">
                         w-[80%] h-[60px] mt-4 pl-4 pr-4 rounded-xl cursor-pointer 
                         hover:border-1 hover:border-[var(--color-purple-600)] 
                         "
-                        [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedPlan === 'advanced'}"
-                        (click)="selectPlan('advanced')"
+                        [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedAddOns.includes('Larger Storage')}"
+                        (click)="selectAddOn('Larger Storage')"
                         >
                             <div class="flex flex-row items-center">
                                 <div class="relative flex items-center justify-center w-4 h-4">
                                     <input 
                                     type="checkbox" 
-                                    class="appearance-none w-4 h-4 
+                                    class="appearance-none w-4 h-4
                                     rounded-sm bg-white cursor-pointer
                                     checked:bg-(--color-purple-600) checked:border-0 peer"
                                     >
@@ -369,14 +369,14 @@ class="w-full h-screen flex justify-center items-center">
                         w-[80%] h-[60px] mt-4 pl-4 pr-4 rounded-xl cursor-pointer 
                         hover:border-1 hover:border-[var(--color-purple-600)] 
                         "
-                        [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedPlan === 'pro'}"
-                        (click)="selectPlan('pro')"
+                        [ngClass]="{'border-1 border-[var(--color-purple-600)]': selectedAddOns.includes('Customizable Profile')}"
+                        (click)="selectAddOn('Customizable Profile')"
                         >
                             <div class="flex flex-row items-center">
                                 <div class="relative flex items-center justify-center w-4 h-4">
                                     <input 
                                     type="checkbox" 
-                                    class="appearance-none w-4 h-4 
+                                    class="appearance-none w-4 h-4
                                     rounded-sm bg-white cursor-pointer
                                     checked:bg-(--color-purple-600) checked:border-0 peer"
                                     >
